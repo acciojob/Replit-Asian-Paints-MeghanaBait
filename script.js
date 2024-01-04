@@ -1,41 +1,29 @@
-#grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 100px);
-    gap: 10px;
-}
+document.addEventListener("DOMContentLoaded", function() {
+    const gridItems = document.querySelectorAll('.grid-item');
+    const changeButton = document.getElementById('change_button');
+    const resetButton = document.getElementById('reset');
+    const blockIdInput = document.getElementById('block_id');
+    const colourIdInput = document.getElementById('colour_id');
 
-.grid-item {
-    width: 100px;
-    height: 100px;
-    background-color: transparent;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    border: 1px solid black;
-}
+    changeButton.addEventListener('click', function() {
+        const selectedId = blockIdInput.value;
+        const selectedColour = colourIdInput.value;
 
-button {
-    margin-top: 10px;
-}
-//your JS code here. If required.
-#grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 100px);
-    gap: 10px;
-}
+        gridItems.forEach(item => {
+            item.style.backgroundColor = 'transparent';
+        });
 
-.grid-item {
-    width: 100px;
-    height: 100px;
-    background-color: transparent;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    border: 1px solid black;
-}
+        const selectedItem = document.getElementById(selectedId);
+        if (selectedItem) {
+            selectedItem.style.backgroundColor = selectedColour;
+        } else {
+            alert('Invalid ID');
+        }
+    });
 
-button {
-    margin-top: 10px;
-}
+    resetButton.addEventListener('click', function() {
+        gridItems.forEach(item => {
+            item.style.backgroundColor = 'transparent';
+        });
+    });
+});
