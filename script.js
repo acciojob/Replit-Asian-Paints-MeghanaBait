@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const selectedColour = colourIdInput.value;
 
         gridItems.forEach(item => {
-            item.style.backgroundColor = 'transparent';
+            item.style.backgroundColor = 'rgba(0, 0, 0, 0)';
         });
 
         const selectedItem = document.getElementById(selectedId);
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     resetButton.addEventListener('click', function() {
         gridItems.forEach(item => {
-            item.style.backgroundColor = 'transparent';
+            item.style.backgroundColor = 'rgba(0, 0, 0, 0)';
         });
     });
 });
